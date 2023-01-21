@@ -1,0 +1,253 @@
+.label {
+  cursor: pointer;
+}
+.checkbox {
+  display: none;
+}
+.fake {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  background: #e3b873;
+  color: #fff;
+  justify-content: center;
+}
+.fake::before {
+  content: "\2714";
+  opacity: 0;
+  transition: 0.2s;
+}
+.checkbox:checked + .fake::before {
+  opacity: 1;
+}
+/*--------------------------------------common styles---------------------------------------*/
+.wrapper {
+  margin: 0 auto;
+  min-height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+html,
+body {
+  height: 100%;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+[class*="__container"] {
+  max-width: 1256px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+/*прибить футер*/
+main {
+  flex: 1 1 auto;
+}
+.active {
+  color: #e3b873;
+}
+.button {
+  text-transform: uppercase;
+  outline: 0;
+  font-family: "Nunito Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 136%;
+  background: #e3b873;
+  box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
+  border-radius: 2px;
+  border: 0;
+  color: #ffffff;
+  padding: 13px 33px;
+}
+@media (max-width: 768px) {
+  [class*="__container"] {
+    max-width: 340px;
+    margin: 0 auto;
+    box-sizing: content-box;
+  }
+}
+
+/*-----------------------------------------2------------------------------------*/
+.page__completed {
+  background-color: #000000;
+  padding-top: 107px;
+  margin: 0;
+  height: 783px;
+}
+.completed__body {
+  margin-left: 42px;
+  margin-right: 42px;
+  display: flex;
+}
+
+.completed__title {
+  font-size: 27px;
+  line-height: 137%;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  color: #e3b873;
+  max-width: 253px;
+  margin-bottom: 34px;
+  padding-top: 53px;
+  font-family: "Yeseva One";
+  font-style: normal;
+}
+
+.completed__text {
+  line-height: 27px;
+  margin-bottom: 42px;
+  max-width: 442px;
+  max-height: 86px;
+  margin-right: 50px;
+}
+
+.completed__menu {
+  display: flex;
+}
+.completed__menu li {
+  padding: 0 50px 0px 0;
+  font-size: 13px;
+  line-height: 161%;
+}
+
+.tit.active {
+  font-size: 18px;
+  line-height: 138%;
+  text-transform: uppercase;
+  color: #e3b873;
+  font-family: "Yeseva One";
+  font-style: normal;
+}
+
+.slider__titles  {
+  display: flex;
+  line-height: 135%;
+  text-transform: uppercase;
+  font-family: "Yeseva One";
+  font-style: normal;
+  margin-bottom: 52px;
+  cursor: pointer;
+}
+
+.tit {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.slider__titles:not(:last-child) {
+  margin: 0 0 52px 0;
+}
+
+.tit:not(:last-child) {
+  margin: 0 60px 0 0;
+}
+
+.slider__titles .active {
+  border-bottom: 1px #e3b873 solid;
+}
+
+/*--------------------------------*/
+
+.btn-prev,
+.btn-next,
+.dots-wrapper {
+  display: flex;
+  margin: 0;
+  background-color: #000000;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  margin-top: 40px;
+  padding-left: 10px;
+}
+.tabs-wpapper {
+  display: flex;
+  color: rgba(255, 255, 255, 0.3);
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+
+#btn-prev,
+#btn-next {
+  position: absolute;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+.slide{
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.slider-wrapper {
+  position: relative;
+  height: 482px;
+  max-width: 679px;
+  width: 100%;
+}
+
+.slide.active {
+  display: block;
+}
+.dots-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.dot.active {
+  background: rgb(255, 255, 255);
+}
+span.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-right: 10px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+.span:last-child {
+  margin-right: 0;
+}
+#btn-prev:hover, #btn-next:hover {
+  opacity: 0.6;
+}
+
