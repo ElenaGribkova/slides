@@ -1,13 +1,13 @@
-const prev = document.getElementById('btn-prev'),
-    next = document.getElementById('btn-next'),
+const prev = document.querySelector('.btn-prev'),
+    next = document.querySelector('.btn-next'),
     slides = document.querySelectorAll('.slide'),
-    dots = document.querySelectorAll('.dot');
-    titles = document.querySelectorAll('.slider__titles');
-
+    dots = document.querySelectorAll('.dot'),
+    titles = document.querySelectorAll('.tit');
 
 let index = 0;
 
 const activSlide = n => {
+    console.log(n)
     for (slide of slides) {
         slide.classList.remove('active');
     }
@@ -17,16 +17,15 @@ const activDot = n => {
     for (dot of dots) {
         dot.classList.remove('active');
     }
-    dots[n].classList.add('active'); 
+    dots[n].classList.add('active');
 }
 const activTit = n => {
     for (tit of titles) {
         tit.classList.remove('active');
     }
-    titles[n].classList.add('active'); 
+    titles[n].classList.add('active');
 }
-
-const prepareCurentSlide = ind => {
+function prepareCurentSlide(ind) {
     activSlide(ind);
     activDot(ind);
     activTit(ind);
@@ -50,6 +49,7 @@ const prevSlide = () => {
     }
 }
 
+prepareCurentSlide(index);
 dots.forEach((item, indexDot) => {
     item.addEventListener('click',()=>{
     index = indexDot;
